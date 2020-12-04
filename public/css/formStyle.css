@@ -1,0 +1,270 @@
+body {
+    background: linear-gradient(-45deg, #daddd3, #fefffc);
+    margin: 0;
+    padding: 0;
+  }
+
+#page-container{
+    position: relative;
+    min-height: 100vh;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}  
+
+/* Header Section */
+    
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    height: 69px;
+    background-color: #000000;
+    border-bottom: 1px solid seashell;
+    align-items: center;
+}
+  
+header img {
+    height: 65px;
+    padding-left: 10px;
+    background-color: white;
+}
+  
+nav {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 30px;
+    color: white;
+    flex-grow: 1;
+}
+  
+nav span {
+    display: inline-block;
+    padding: 19px 30px;
+}
+
+nav a:link, a:visited {
+    color: white;
+}
+
+nav a:hover {
+    color: red;
+}
+
+/* Main Section */
+
+.main {
+    padding-top: 69px;
+    opacity: 0.9;
+    width: 1200px;
+    margin: auto;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding-bottom: 10rem;
+}
+
+/* selectSection Section */
+
+.selectSection {
+    display: flex;
+    justify-content: center;
+}
+
+.selectSection button{
+    background-color: #39a9f3; 
+    border: 3px solid #333;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+    transition: .3s ease background-color;
+}
+
+.selectSection button:hover{
+    background-color: #004370;
+}
+
+/* contentSection section */
+.content{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-color: rgb(215, 231, 245);
+    border: 3px solid #333;
+    overflow: auto;
+}
+
+/* POST CONTENT Section */
+
+.flex-post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    width: 100%;
+    background-color: rgb(215, 231, 245);
+}
+
+.flex-post p{
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+
+/* GET CONTENT section */
+
+.flex-get{
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    width: 200%;
+    background-color: rgb(215, 231, 245);
+}
+
+.flex-get p{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* PUT CONTENT section */
+
+.flex-put{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    width: 100%;
+    background-color: rgb(215, 231, 245);
+}
+
+.flex-put p{
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+
+/* DELETE CONTENT section */
+.flex-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(215, 231, 245);
+}
+
+.flex-delete p{
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Text fields */
+
+.flexbox-item{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.form-group{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid rgba(128, 128, 0.199);
+    margin-top: 5px
+}
+
+textarea{
+    resize: vertical;
+}
+
+/* Buttons Section */
+
+.flexbox-button{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 0px;
+    font-family: "Montserrat";
+    color: rgb(27, 166, 247);
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .3s ease background-color;
+}
+
+.flexbox-button:hover{
+    background-color: rgb(214, 226, 236);
+}
+
+/* Footer Section */
+
+footer {
+	position: absolute;
+	width: 100%;
+    bottom: 0;
+    height: 7rem;
+	background-color: #000000;
+}
+
+footer p {
+  color: white;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
