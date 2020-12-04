@@ -58,7 +58,7 @@ function submitUser() {
     let data = {'userName':userNameParam, 'restaurantName':restaurantNameParam, 'address': addressParam, 'city': cityParam, 'zipcode': zipcodeParam, 'date': dateParam};
     console.log(JSON.stringify(data))
 
-    let userURL = "http://localhost:5000/users/";
+    let userURL = "https://eatsafefoods.herokuapp.com/users/";
     const fetchPromise = fetch(userURL,{ method:'POST', headers: {
         'Content-Type': 'application/json'
       }, body: JSON.stringify(data)});
@@ -96,7 +96,7 @@ function submitUser() {
       console.log("Called getUser");
     
       let userZipcode = document.getElementById("userZipcode").value;
-      let userURL = "http://localhost:5000/users/" + userZipcode;
+      let userURL = "https://eatsafefoods.herokuapp.com/users/" + userZipcode;
       const fetchPromise = fetch(userURL);
   
       fetchPromise
@@ -161,7 +161,7 @@ function submitUser() {
     console.log(JSON.stringify(data))
 
 
-    let userURL = "http://localhost:5000/users/" + updateUserNameParam;
+    let userURL = "https://eatsafefoods.herokuapp.com/users/" + updateUserNameParam;
     const fetchPromise = fetch(userURL,{ method:'PUT', headers: {
         'Content-Type': 'application/json'
       }, body: JSON.stringify(data)});
@@ -202,7 +202,7 @@ function submitUser() {
   
     let deleteUserNameParam = document.getElementById("deleteUserName").value;
     console.log("userName:" + deleteUserNameParam);
-    let userURL = "http://localhost:5000/users/" + deleteUserNameParam;
+    let userURL = "https://eatsafefoods.herokuapp.com/users/" + deleteUserNameParam;
     const fetchPromise = fetch(userURL,{ method:'DELETE'});
   
     fetchPromise
