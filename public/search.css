@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(-45deg, #daddd3, #fefffc);
+    margin: 0;
+    padding: 0;
+  }
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    margin-bottom: 30px;
+}
+.container {
+    padding: 20px; /*Can change to alter # columns*/
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#restaurantList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.restaurant {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name'
+        'address';
+    text-align: left;
+}
+
+.restaurant > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.restaurant > a {
+    grid-area: name;
+    font-size: 20px;
+    color: black;
+}
+
+.restaurant > p {
+    grid-area: address;
+    margin: 0;
+    margin-top: 0px;
+}
+
+.restaurant > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#searchBar {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
