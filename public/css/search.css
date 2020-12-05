@@ -1,0 +1,161 @@
+body {
+    background: linear-gradient(-45deg, #daddd3, #fefffc);
+    margin: 0;
+    padding: 0;
+  }
+
+#page-container{
+    position: relative;
+    min-height: 100vh;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}  
+
+/* Header Section */
+    
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    height: 69px;
+    background-color: #000000;
+    border-bottom: 1px solid seashell;
+    align-items: center;
+}
+  
+header img {
+    height: 65px;
+    padding-left: 10px;
+    background-color: white;
+}
+  
+nav {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 30px;
+    color: white;
+    flex-grow: 1;
+}
+  
+nav span {
+    display: inline-block;
+    padding: 19px 30px;
+}
+
+nav a:link, a:visited {
+    color: white;
+}
+
+nav a:hover {
+    color: red;
+}
+
+/* Main Section */
+
+.main {
+    padding-top: 69px;
+    opacity: 0.9;
+    width: 1200px;
+    margin: auto;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding-bottom: 10rem;
+}
+
+.container {
+    padding: 20px; /*Can change to alter # columns*/
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#restaurantList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-gap: 20px;
+}
+
+.restaurant {
+    list-style-type: none;
+    background-color:  #EDF4F5;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name'
+        'address';
+    text-align: left;
+}
+
+.restaurant:hover {
+    background-color: #029ED4;
+}
+
+.restaurant > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.restaurant > a {
+    grid-area: name;
+    font-size: 20px;
+    color: black;
+}
+
+.restaurant > p {
+    grid-area: address;
+    margin: 0;
+    margin-top: 0px;
+}
+
+.restaurant > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#searchBar {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+
+#searchWrapper {
+    position: relative;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+
+/* Footer Section */
+
+footer {
+	position: absolute;
+	width: 100%;
+    bottom: 0;
+    height: 7rem;
+	background-color: #000000;
+}
+
+footer p {
+  color: white;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}

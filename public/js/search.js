@@ -13,6 +13,9 @@ searchBar.addEventListener('keyup', (i) => {
     })
     console.log(filteredRestaurants);
     displayRestaurants(filteredRestaurants)
+    if (searchBar === "") {
+        displayRestaurants(null);
+    }
 })
 
 //loads restaurant list from json
@@ -20,7 +23,6 @@ const loadRestaurants = async () => {
     try {
         const res = await fetch('restaurants.json');
         restaurants = await res.json();
-        displayRestaurants(restaurants);
     } catch (err) {
         console.error(err);
     }
@@ -37,10 +39,8 @@ const displayRestaurants = (restaurants) => {
         .map((restaurant) => {
             return `
             <li class="restaurant">
-                <a href="report.html" onclick="return setID(${restaurant.id})">${restaurant.name}</a>
+                <a href="report.html" target="_blank" onclick="return setID(${restaurant.id})">${restaurant.name}</a>
                 <p><i>${restaurant.address1}</i></p>
-                
-
             </li>
         `;
         })
@@ -50,3 +50,4 @@ const displayRestaurants = (restaurants) => {
 
 //Starts loading the functions
 loadRestaurants();
+

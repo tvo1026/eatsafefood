@@ -3,23 +3,61 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="search.css" />
+        <title>Eat Safe Foods</title>
+        <link rel = "icon" href = "https://image.flaticon.com/icons/png/128/3649/3649260.png" type = "image/x-icon">
+        <script defer src="js/search.js"></script>
+        <link rel="stylesheet" href="css/search.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body>
-        <div class="container">
-            <h1>Restaurant Search</h1>
-            <p>Below is a list of every restaurant in College Park, Maryland. Begin typing in the search bar to filter the list by restaurant name or address.</p>
-            <div id="searchWrapper">
-                <input
-                    type="text"
-                    name="searchBar"
-                    id="searchBar"
-                    placeholder="search for a restaurant"
-                />
+        <div id="page-container">
+            <!-- Header -->
+            <header class="flex-container">
+                <a href="./index.html"><img id="logo" src="./img/logo.png"/></a>
+                <nav>
+                    <span><a href="./index.html">Main</a></span>
+                    <span><a href="./search.html">Map</a></span>
+                    <span><a href="./form.html">Report Form</a></span>
+                </nav>
+            </header>
+
+            <!-- Main Content Container -->
+            <div class="main">
+
+                <!-- Introduction Section -->
+                <div id="intro" class="flex-container">
+                    <div class="content">
+                        <h1>Restaurant Search</h1>
+                        <h3>Below is a list of every restaurant in College Park, Maryland. Begin typing in the search bar to filter the list by restaurant name or address.</h3>
+                    </div>
+                </div>
+
+                <!-- Search Section -->
+                <div class="container">
+                    <div id="searchWrapper">
+                        <input
+                            type="text"
+                            name="searchBar"
+                            id="searchBar"
+                            placeholder="search for a restaurant"
+                        />
+                    </div>
+                    <ul id="restaurantList"></ul>
+                </div>
+
+                <!-- Report Section -->
+                <div class="flex-report">
+                    <div id = "report"></div>
+                    <div id="myData"></div><br>
+                </div>
             </div>
-            <ul id="restaurantList"></ul>
+        <!-- Footer Section -->
+        <footer id="about">
+            <p>GGTea: Gaurav Dali, Gabriel Estrella, Akpokli Foli Sosro, Edward Trabucco, Thinh Vo</p>
+            <p>USG @2020</p>
+        </footer>
         </div>
-        <script src="js/search.js"></script>
     </body>
 </html>
