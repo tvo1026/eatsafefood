@@ -152,6 +152,15 @@ nav a:hover {
     font-size: 22px;
 }
 
+/* Table */
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
 /* PUT CONTENT section */
 
 .flex-put{
@@ -267,4 +276,3 @@ footer p {
   width: 100%;
   box-sizing: border-box;
 }
-

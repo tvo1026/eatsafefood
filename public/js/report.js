@@ -21,6 +21,8 @@ fetch(inspection)
                 return {
                     name: item.name,
                     address: item.address_line_1,
+                    city: item.city,
+                    zip: item.zip,
                     inspection_date: item.inspection_date,
                     inspection_results: item.inspection_results
                 }
@@ -80,14 +82,15 @@ fetch(inspection)
                     recent = newData[i].inspection_date
                     recentResult = newData[i].inspection_results
                 }
-                // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-                let divContainer = document.getElementById("myData");
-                divContainer.innerHTML = "";
-                divContainer.appendChild(table);
-                // newData = newData.filter(item => !(item.inspection_results = ));
-                /*console.log(typeof(recentResult))
-                console.log(typeof(data[0].inspection_results))
-                console.log(typeof(data[0].inspection_date))*/
+            // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+            let divContainer = document.getElementById("myData");
+            divContainer.innerHTML = "";
+            divContainer.appendChild(table);
+            
+            // newData = newData.filter(item => !(item.inspection_results = ));
+            /*console.log(typeof(recentResult))
+            console.log(typeof(data[0].inspection_results))
+            console.log(typeof(data[0].inspection_date))*/
             console.log(recentResult);
             }
             if (recentResult === "Compliant - No Health Risk"){
@@ -126,17 +129,25 @@ fetch(inspection)
                         console.log(user);
                         let message = "";
                         let count = 0;
-                        let newA = [];
+                        let newA = []; 
+                        let currentDate = new Date().toJSON().slice(0,10).replace(/-/g,'/');
                         for (let i=0; i<user.length; i++) {
                             for (let j=0; j<data.length; j++) {
-                                if (user[i].address === data[j].address_line_1) {
+                                if (user[i].address.toUpperCase() === data[j].address_line_1) {
                                     count ++;
                                     newA.push(count);
                                     break;
+                                } else if (user[i].address.toUpperCase() !== data[j].address_line_1) {
+                                    count = 0
                                 }
                             }
-                            message = "This restaurant has " + newA.length + " number of cases."
-                            document.getElementById("formReport").innerHTML = message;
+                            if (newA.length === 0) {
+                                message = "The number of cases: " + count + ". This restaurant is quite safe from COVID-19 as of " + currentDate + ".";
+                                document.getElementById("formReport").innerHTML = message;
+                            } else if (newA.length > 0) {
+                                message = "The number of cases: " + newA.length + ". This restaurant is not quite safe from COVID-19 as of " + currentDate + ".";
+                                document.getElementById("formReport").innerHTML = message;
+                            } 
                         }
                     })
                 .catch((err) => {

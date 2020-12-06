@@ -19,19 +19,19 @@
             <a href="./index.html"><img id="logo" src="./img/logo.png"/></a>
             <nav>
                 <span><a href="./index.html">Main</a></span>
-                <span><a href="./search.html">Map</a></span>
-                <span><a href="./form.html">Report Form</a></span>
+                <span><a href="./search.html">Search</a></span>
+                <span><a href="./form.html">Form</a></span>
             </nav>
         </header>
 
         <!-- Main Content Container -->
         <div class="main">
-            <h1>Report Form</h1>
+            <h1>Submit Form</h1>
             <hr>
             <div class="selectSection">
-                <button type="button" data-number="1">Post</button>
+                <button type="button" data-number="1">Add</button>
                 <button type="button" data-number="2">Get</button>
-                <button type="button" data-number="3">Put</button>
+                <button type="button" data-number="3">Update</button>
                 <button type="button" data-number="4">Delete</button>
             </div>
 
@@ -40,27 +40,27 @@
                 <div class="content" data-number="1">
                     <div class="flexbox-item">
                         <div class="form-group">
-                            <label for="userName">Username:</label><br>
+                            <label for="userName">Username:&#42;</label><br>
                             <input type="text" id="userName" name="userName" required/>
                         </div>
                         <div class="form-group">
-                            <label for="restaurantName">Restaurant Name:</label><br>
+                            <label for="restaurantName">Restaurant Name:&#42;</label><br>
                             <input type="text" id="restaurantName" name="restaurantName" required/>
                         </div>
                         <div class="form-group">
-                            <label for="address">Address:</label><br>
+                            <label for="address">Address:&#42;</label><br>
                             <input type="text" id="address" name="address" required/>
                         </div>
                         <div class="form-group">
-                            <label for="city">City:</label><br>
+                            <label for="city">City:&#42;</label><br>
                             <input type="text" id="city" name="city" required/>
                         </div>
                         <div class="form-group">
-                            <label for="zipCode">Zipcode:</label><br>
+                            <label for="zipCode">Zipcode:&#42;</label><br>
                             <input type="number" id="zipcode" name="zipcode" required/>
                         </div>
                         <div class="form-group">
-                            <label for="date">Date visited:</label><br>
+                            <label for="date">Date visited:&#42;</label><br>
                             <input type="date" id="date" id="date" name="date" min="2020-03-01" max="2022-12-31">
                         </div>
                         <button onclick="submitUser()" class="flexbox-button">Submit</button>
@@ -75,7 +75,7 @@
                 <div class="content" data-number="2">
                     <div class="flexbox-item">
                         <div class="form-group">
-                            <label for="userZipcode">Zipcode:</label><br>
+                            <label for="userZipcode">Zipcode:&#42;</label><br>
                             <input type="number" id="userZipcode" />
                             <button onclick="getUser()" class="flexbox-button">Get Result</button>
                         </div>
@@ -90,30 +90,30 @@
                 <div class="content" data-number="3">
                     <div class="flexbox-item">
                         <div class="form-group">
-                            <label for="updateUser">Please enter your username to update:</label><br>
+                            <label for="updateUser">Please enter your username to update:&#42;</label><br>
                             <input type="text" id="updateUser"/>
                         </div>
                         <div class="form-group">
-                            <label for="updateRestaurantName">New Restaurant Name:</label><br>
+                            <label for="updateRestaurantName">New Restaurant Name:&#42;</label><br>
                             <input type="text" id="updateRestaurantName" required/><br>  
                         </div>
                         <div class="form-group">
-                            <label for="updateAdress">New Address:</label><br>
+                            <label for="updateAdress">New Address:&#42;</label><br>
                             <input type="text" id="updateAddress" required/><br> 
                         </div>
                         <div class="form-group">
-                            <label for="updateCity">New City:</label><br>
+                            <label for="updateCity">New City:&#42;</label><br>
                             <input type="text" id="updateCity" required/><br>  
                         </div> 
                         <div class="form-group">
-                            <label for="updateZipcode">New Zipcode:</label><br>
+                            <label for="updateZipcode">New Zipcode:&#42;</label><br>
                             <input type="number" id="updateZipcode" required/><br> 
                         </div>         
                         <div class="form-group">
-                            <label for="updateDate">New date:</label><br>
+                            <label for="updateDate">New date:&#42;</label><br>
                             <input type="date" id="updateDate" id="updateDate" name="updateDate" min="2020-03-01" max="2022-12-31"><br>
                         </div> 
-                        <button onclick="updateUser()" class="flexbox-button">Update Task</button>
+                        <button onclick="updateUser()" class="flexbox-button">Update User</button>
                     </div>
                     <!--<PUT CONTENT>-->
                     <div class="flex-put">
@@ -125,7 +125,7 @@
                 <div class="content" data-number="4">
                     <div class="flexbox-item">
                         <div class="form-group">
-                            <label for="deleteUserName">Please enter your username to delete:</label><br>
+                            <label for="deleteUserName">Please enter your username to delete:&#42;</label><br>
                             <input type="text" id="deleteUserName" /><br>
                         </div>
                         <button onclick="deleteUser()" class="flexbox-button">Delete User</button>
