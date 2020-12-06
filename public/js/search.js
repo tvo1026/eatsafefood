@@ -13,7 +13,7 @@ searchBar.addEventListener('keyup', (i) => {
     })
     console.log(filteredRestaurants);
     displayRestaurants(filteredRestaurants)
-    if (searchBar === "") {
+    if (searchBar.addEventListener() === "") {
         displayRestaurants(null);
     }
 })

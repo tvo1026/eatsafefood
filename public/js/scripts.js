@@ -77,7 +77,7 @@ function submitUser() {
           let city = user.city;
           let zipcode = user.zipcode;
           let date = user.date;
-          let message = "Id: " + userId + "<br>userName: " + userName + "<br>restaurantName: " + restaurantName + "<br>address: " + address + "<br>city: " + city + "<br>zipcode: " + zipcode + "<br>date: " + date; 
+          let message = "userName: " + userName + "<br>restaurantName: " + restaurantName + "<br>address: " + address + "<br>city: " + city + "<br>zipcode: " + zipcode + "<br>date: " + date; 
           if (typeof userId === "undefined") {
             window.alert("Sorry. Please input all the required fields or change your username.");
           } else {
@@ -105,10 +105,20 @@ function submitUser() {
         })
         .then((user) => {
           console.log(user);
+          let userJson = user.map(item => {
+            return {
+                userName: item.userName,
+                restaurantName: item.restaurantName,
+                address: item.address,
+                city: item.city,
+                zipcode: item.zipcode,
+                date: item.date
+            }
+          })
           // CONVERT JSON TO TABLE
           let col = [];
-          for (let i = 0; i < user.length; i++) {
-              for (let key in user[i]) {
+          for (let i = 0; i < userJson.length; i++) {
+              for (let key in userJson[i]) {
                   if (col.indexOf(key) === -1) {
                       col.push(key);
                   }
@@ -127,18 +137,22 @@ function submitUser() {
           }
   
           // ADD JSON DATA TO THE TABLE AS ROWS.
-          for (let i = 0; i < user.length; i++) {
+          for (let i = 0; i < userJson.length; i++) {
               tr = table.insertRow(-1);
               for (let j = 0; j < col.length; j++) {
                   let tabCell = tr.insertCell(-1);
-                  tabCell.innerHTML = user[i][col[j]];
+                  tabCell.innerHTML = userJson[i][col[j]];
               }
           }
   
           // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-          let divContainer = document.getElementById("getUserContent");
-          divContainer.innerHTML = "";
-          divContainer.appendChild(table);
+          if (userZipcode === "") {
+            window.alert("Please enter the zipcode to begin.")
+          } else {
+            let divContainer = document.getElementById("getUserContent");
+            divContainer.innerHTML = "";
+            divContainer.appendChild(table);
+          }
       })
       .catch((err) => {
           console.log(err);
@@ -183,7 +197,7 @@ function submitUser() {
           message = "Your username is updated successfully" + "<br>userName: " + userName + "<br>restaurantName: " + restaurantName + "<br>address: " + address + "<br>city: " + city + "<br>zipcode: " + zipcode + "<br>date: " + date; 
           if (user.n === 0) {
             window.alert("Sorry. Your username does not exist. Please try again");
-          } else if ((userName === "") || (restaurantName === "") || (address === "") || (city === "") || (zipcode === "")) {
+          } else if ((userName === "") || (restaurantName === "") || (address === "") || (city === "") || (zipcode === "") || (date === "")) {
             window.alert("Please enter all the required fields.");
           } else {
             document.getElementById("updatedUserContent").innerHTML = message;
@@ -192,7 +206,7 @@ function submitUser() {
     })
     .catch((err) => {
         console.log(err);
-        document.getElementById("updatedUserContent").innerHTML = "Invalid userName: " + updateUserNameParam;
+        window.alert("Please enter your username to begin.")
     });
   }
   
