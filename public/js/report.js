@@ -1,4 +1,3 @@
-
 let url = "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json?city=COLLEGE PARK&establishment_id=";
 let id = sessionStorage.getItem("searchID");
 let inspection = url+id;
@@ -21,11 +20,11 @@ fetch(inspection)
             var newData = data.map(item => {
                 return {
                     name: item.name,
+                    address: item.address_line_1,
                     inspection_date: item.inspection_date,
                     inspection_results: item.inspection_results
                 }
             })
-
             // Filter an array
             newData = newData.filter(item => !(item.inspection_results === "------" ));
             
@@ -113,4 +112,39 @@ fetch(inspection)
             var div = document.createElement("div");
             div.innerHTML = 'In the last five years this restaurant has failed ' + failed + ' out of  ' + total + ' Inspections. It ' + recentText + ' the most recent inspection on ' + recent.substr(0,10) + '.' + '<br>';
             reportContainer.appendChild(div)
-            }
+            
+            // GET results from Form.html
+            function getAddress() {
+                console.log("Called getAddress");
+                let userURL = "https://eatsafefoods.herokuapp.com/users/";
+                const fetchPromise = fetch(userURL);
+                fetchPromise
+                    .then((response) => {
+                    return response.json();
+                    })
+                    .then((user) => {
+                        console.log(user);
+                        let message = "";
+                        let count = 0;
+                        let newA = [];
+                        for (let i=0; i<user.length; i++) {
+                            for (let j=0; j<data.length; j++) {
+                                if (user[i].address === data[j].address_line_1) {
+                                    count ++;
+                                    newA.push(count);
+                                    break;
+                                }
+                            }
+                            message = "This restaurant has " + newA.length + " number of cases."
+                            document.getElementById("formReport").innerHTML = message;
+                        }
+                    })
+                .catch((err) => {
+                    console.log(err);
+                    document.getElementById("getUserContent").innerHTML = "Invalid user zipcode: " + userZipcode;
+                });
+                }
+            getAddress();
+        };
+
+
