@@ -150,9 +150,29 @@ nav a:hover {
   max-width: 700px;
 }
 
-/*@media all and (max-width: 600px) {
+/* Footer Section */
+
+footer {
+	position: absolute;
+	width: 100%;
+  bottom: 0;
+  height: 7rem;
+	background-color: #000000;
+}
+
+footer p {
+  color: white;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 25px;
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Mobile Devices Support */
+@media all and (max-width: 600px) {
   body { margin: 0; }
-  // .flex div { flex: 1 !important; } optional: equalizes the visual "weight" of the photo and description
+  flex div { flex: 1 !important; }
 }
 @media all and (max-width: 450px) {
   h2 {
@@ -175,24 +195,4 @@ nav a:hover {
   .flex div:first-child {
     min-height: 200px;
   }
-}*/
-
-/* Footer Section */
-
-footer {
-	position: absolute;
-	width: 100%;
-  bottom: 0;
-  height: 7rem;
-	background-color: #000000;
 }
-
-footer p {
-  color: white;
-  font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: 25px;
-	text-align: center;
-	width: 100%;
-	box-sizing: border-box;
-}
-
