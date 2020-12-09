@@ -50,9 +50,9 @@ function submitUser() {
     console.log("Called submitUser");
     
     let userNameParam = document.getElementById("userName").value;
-    let restaurantNameParam = document.getElementById("restaurantName").value;
-    let addressParam = document.getElementById("address").value;
-    let cityParam = document.getElementById("city").value;
+    let restaurantNameParam = document.getElementById("restaurantName").value.trim();
+    let addressParam = document.getElementById("address").value.trim();
+    let cityParam = document.getElementById("city").value.trim();
     let zipcodeParam = document.getElementById("zipcode").value;
     let dateParam = document.getElementById("date").value;
     let data = {'userName':userNameParam, 'restaurantName':restaurantNameParam, 'address': addressParam, 'city': cityParam, 'zipcode': zipcodeParam, 'date': dateParam};
@@ -105,6 +105,9 @@ function submitUser() {
         })
         .then((user) => {
           console.log(user);
+          if (user === undefined || user.length === 0) {
+            window.alert("There's no information associated with the zipcode you just entered. Please try again.");
+          }
           let userJson = user.map(item => {
             return {
                 userName: item.userName,
@@ -166,12 +169,12 @@ function submitUser() {
     console.log("Called updateUser");
     
     let updateUserNameParam = document.getElementById("updateUser").value;
-    let updateRestaurantNameParam = document.getElementById("updateRestaurantName").value;
-    let updateAddressParam = document.getElementById("updateAddress").value;
-    let updateCityParam = document.getElementById("updateCity").value;
+    let updateRestaurantNameParam = document.getElementById("updateRestaurantName").value.trim();
+    let updateAddressParam = document.getElementById("updateAddress").value.trim();
+    let updateCityParam = document.getElementById("updateCity").value.trim();
     let updateZipcodeParam = document.getElementById("updateZipcode").value;
     let updateDateParam = document.getElementById("updateDate").value;
-    data = {'userName': updateUserNameParam, 'restaurantName':updateRestaurantNameParam, 'address':updateAddressParam, 'city':updateCityParam, 'zipcode':updateZipcodeParam, 'date':updateDateParam};
+    data = {'userName': updateUserNameParam, 'restaurantName':updateRestaurantNameParam.replace("\t", ""), 'address':updateAddressParam.replace("\t", ""), 'city':updateCityParam.replace("\t", ""), 'zipcode':updateZipcodeParam, 'date':updateDateParam};
     console.log(JSON.stringify(data))
 
 

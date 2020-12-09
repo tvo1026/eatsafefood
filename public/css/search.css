@@ -104,20 +104,13 @@ nav a:hover {
 
 .restaurant > a {
     grid-area: name;
-    font-size: 20px;
     color: black;
 }
 
 .restaurant > p {
     grid-area: address;
-    margin: 0;
-    margin-top: 0px;
 }
 
-.restaurant > img {
-    max-height: 100px;
-    grid-area: image;
-}
 
 #searchBar {
     width: 100%;

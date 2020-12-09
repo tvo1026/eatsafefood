@@ -8,20 +8,17 @@ searchBar.addEventListener('keyup', (i) => {
     const searchString = i.target.value.toLowerCase();
     const filteredRestaurants = restaurants.filter(restaurant => {
         return (
-        restaurant.name.toLowerCase().includes(searchString) || restaurant.address1.toLowerCase().includes(searchString)
+        restaurant.name.toLowerCase().includes(searchString) || restaurant.address_line_1.toLowerCase().includes(searchString)
         );
     })
     console.log(filteredRestaurants);
     displayRestaurants(filteredRestaurants)
-    if (searchBar.addEventListener() === "") {
-        displayRestaurants(null);
-    }
 })
 
 //loads restaurant list from json
 const loadRestaurants = async () => {
     try {
-        const res = await fetch('restaurants.json');
+        const res = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json?');
         restaurants = await res.json();
     } catch (err) {
         console.error(err);
@@ -35,15 +32,30 @@ function setID(id) {
 
 //displays all restaurants and will provide links when finished
 const displayRestaurants = (restaurants) => {
-    const htmlString = restaurants
-        .map((restaurant) => {
-            return `
-            <li class="restaurant">
-                <a href="report.html" target="_blank" onclick="return setID(${restaurant.id})">${restaurant.name}</a>
-                <p><i>${restaurant.address1}</i></p>
-            </li>
-        `;
-        })
+    //Unique restaurants' names.
+    // Declare a new array 
+    let uniqueRestaurantList = []; 
+    // Declare an empty object 
+    let uniqueObject = {};             
+    // Loop for the array elements 
+    for (let i in restaurants) { 
+    // Extract the name
+    objName = restaurants[i]['name']; 
+    // Use the title as the index 
+    uniqueObject[objName] = restaurants[i]; 
+    }  
+    // Loop to push unique object into array 
+    for (i in uniqueObject) { 
+    uniqueRestaurantList.push(uniqueObject[i]); 
+    } 
+    const htmlString = uniqueRestaurantList
+    .map((restaurant) => {
+        return `
+        <li class="restaurant">
+            <a href="report.html" target="_blank" onclick="return setID(${restaurant.establishment_id})">${restaurant.name.toUpperCase()}</a>
+            <p><i>${restaurant.address_line_1.toUpperCase()}</i></p>
+        </li>`;
+    })
         .join('');
         restaurantList.innerHTML = htmlString;
 };
