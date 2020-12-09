@@ -52,7 +52,7 @@ const displayRestaurants = (restaurants) => {
     .map((restaurant) => {
         return `
         <li class="restaurant">
-            <a href="report.html" target="_blank" onclick="return setID(${restaurant.establishment_id})">${restaurant.name.toUpperCase()}</a>
+            <a href="report.html" target="_blank" onclick="return setID(${restaurant.establishment_id})">${restaurant.name.toUpperCase().replace(/\d+$/, "")}</a>
             <p><i>${restaurant.address_line_1.toUpperCase()}</i></p>
         </li>`;
     })
