@@ -39,10 +39,10 @@ const displayRestaurants = (restaurants) => {
     let uniqueObject = {};             
     // Loop for the array elements 
     for (let i in restaurants) { 
-    // Extract the name
-    objName = restaurants[i]['name']; 
+    // Extract the address
+    objAddress = restaurants[i]['address_line_1']; 
     // Use the title as the index 
-    uniqueObject[objName] = restaurants[i]; 
+    uniqueObject[objAddress] = restaurants[i]; 
     }  
     // Loop to push unique object into array 
     for (i in uniqueObject) { 
