@@ -1,46 +1,37 @@
+//Buttons 
 const buttonChange = () => {
-// grab all the buttons
-let Buttons = document.querySelectorAll(".selectSection button");
-
-// loop through the buttons using for..of 
-for (let button of Buttons) {
-
- // listen for a click event 
- button.addEventListener('click', (e) => {
-  // Store the event target in a const
-  const et = e.target;
-
-  // select active class
-  const active = document.querySelector(".active");
-
-  /* when a button is clicked, remove the active class 
-from the button that has it */
-  if (active) {
-    active.classList.remove("active");
-   }
-
-  // Add active class to the clicked element
-  et.classList.add("active");
-
-  // select all classes with the name content
-  let allContent = document.querySelectorAll('.content');
-
-  // loop through all content classes
-  for (let content of allContent) {
-
-    /* display the content if the value in the data attribute of the button and content are the same */
-    if(content.getAttribute('data-number') === button.getAttribute('data-number')) {
-      content.style.display = "flex";
-     }
-
-     // if it's not equal then hide it.
-     else {
-        content.style.display = "none";
-      }
+  // grab all the buttons
+  let Buttons = document.querySelectorAll(".selectSection button");
+  // loop through the buttons using for..of 
+  for (let button of Buttons) {
+    // listen for a click event 
+    button.addEventListener('click', (e) => {
+      // Store the event target in a const
+      const et = e.target;
+      // select active class
+      const active = document.querySelector(".active");
+      /* when a button is clicked, remove the active class from the button that has it */
+      if (active) {
+        active.classList.remove("active");
     }
- });
-}
-}
+    // Add active class to the clicked element
+    et.classList.add("active");
+    // select all classes with the name content
+    let allContent = document.querySelectorAll('.content');
+    // loop through all content classes
+    for (let content of allContent) {
+      /* display the content if the value in the data attribute of the button and content are the same */
+      if(content.getAttribute('data-number') === button.getAttribute('data-number')) {
+      content.style.display = "flex";
+    }
+    // if it's not equal then hide it.
+    else {
+    content.style.display = "none";
+    }
+    }
+    });
+  };
+};
 
 // Call buttonChange function 
 buttonChange();
@@ -55,7 +46,7 @@ function submitUser() {
     let cityParam = document.getElementById("city").value.trim();
     let zipcodeParam = document.getElementById("zipcode").value;
     let dateParam = document.getElementById("date").value;
-    let data = {'userName':userNameParam, 'restaurantName':restaurantNameParam, 'address': addressParam, 'city': cityParam, 'zipcode': zipcodeParam, 'date': dateParam};
+    let data = {'userName':userNameParam, 'restaurantName':restaurantNameParam.replace("\t", ""), 'address': addressParam.replace("\t", ""), 'city': cityParam.replace("\t", ""), 'zipcode': zipcodeParam, 'date': dateParam};
     console.log(JSON.stringify(data))
 
     let userURL = "https://eatsafefoods.herokuapp.com/users/";
@@ -78,8 +69,10 @@ function submitUser() {
           let zipcode = user.zipcode;
           let date = user.date;
           let message = "userName: " + userName + "<br>restaurantName: " + restaurantName + "<br>address: " + address + "<br>city: " + city + "<br>zipcode: " + zipcode + "<br>date: " + date; 
-          if (typeof userId === "undefined") {
-            window.alert("Sorry. Please input all the required fields or change your username.");
+          if ((userNameParam === "") || (restaurantNameParam === "") || (addressParam === "") || (cityParam === "") || (zipcodeParam === "") || (dateParam === "")) {
+            window.alert("Sorry. Please input all the required fields.");
+          } else if(user.message) {
+            window.alert("Sorry. The username already exists. Please try other username")
           } else {
             document.getElementById("postUserContent").innerHTML = message; 
           }
@@ -128,17 +121,14 @@ function submitUser() {
               }
           }
           // CREATE DYNAMIC TABLE.
-          let table = document.createElement("table");
-  
+          let table = document.createElement("table"); 
           // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
           let tr = table.insertRow(-1);                   // TABLE ROW.
-  
           for (let i = 0; i < col.length; i++) {
               let th = document.createElement("th");      // TABLE HEADER.
               th.innerHTML = col[i];
               tr.appendChild(th);
           }
-  
           // ADD JSON DATA TO THE TABLE AS ROWS.
           for (let i = 0; i < userJson.length; i++) {
               tr = table.insertRow(-1);
@@ -147,7 +137,6 @@ function submitUser() {
                   tabCell.innerHTML = userJson[i][col[j]];
               }
           }
-  
           // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
           if (userZipcode === "") {
             window.alert("Please enter the zipcode to begin.")
@@ -160,9 +149,8 @@ function submitUser() {
       .catch((err) => {
           console.log(err);
           document.getElementById("getUserContent").innerHTML = "Invalid user zipcode: " + userZipcode;
-      });
-     
-  }
+      });  
+  };
   
   // PUT method
   function updateUser() {
@@ -211,7 +199,7 @@ function submitUser() {
         console.log(err);
         window.alert("Please enter your username to begin.")
     });
-  }
+  };
   
   // DELETE method
   function deleteUser() {
