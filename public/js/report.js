@@ -90,11 +90,11 @@ fetch(inspection)
     } else if (recentResult === "Non-Compliant - Violations Observed"){
         recentText = "failed"
     } else{
-        recentText === 'error in data'
+        recentText = "failed"
     };
     var reportContainer = document.getElementById("report");
     var div = document.createElement("div");
-    div.innerHTML = 'In the last five years this restaurant has failed ' + failed + ' out of  ' + total + ' Inspections. It ' + recentText + ' the most recent inspection on ' + recent.substr(0,10) + '.' + '<br>';
+    div.innerHTML = 'This restaurant has failed ' + failed + ' out of  ' + total + ' inspections. It ' + recentText + ' the most recent inspection on ' + recent.substr(0,10) + '.' + '<br>';
     reportContainer.appendChild(div)        
     // GET results from Form.html
     function getAddress() {
@@ -122,10 +122,10 @@ fetch(inspection)
                     }
                     };
                     if (newA.length === 0) {
-                        message = "The number of cases: " + count + ". This restaurant is quite safe from COVID-19 as of " + currentDate + ".";
+                        message ="No cases  of Covid-19 have been reported at this location."/* + "The number of cases: " + count + currentDate + "."*/;
                         document.getElementById("formReport").innerHTML = message;
                     } else if (newA.length > 0) {
-                        message = "The number of cases: " + newA.length + ". This restaurant is not quite safe from COVID-19 as of " + currentDate + ".";
+                        message = "Cases of Covid-19 have been reported at this location." + " Number of cases reported is " + newA.length + "."/* + currentDate + "."*/;
                         document.getElementById("formReport").innerHTML = message;
                     } 
                 };

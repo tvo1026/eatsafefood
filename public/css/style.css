@@ -97,13 +97,18 @@ nav a:hover {
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 20px;
 }
-  
+
 .item {
   margin: 0;
   display: flex;
   border: 5px solid #333;
   background-color: #fff;
   margin-bottom: 2rem;
+}
+
+.item a {
+  font-size: 30px;
+  color: #000000;
 }
 
 .item div:first-child {
