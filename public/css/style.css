@@ -52,18 +52,54 @@ nav a:link, a:visited {
 }
 
 nav a:hover {
-    color: red;
+  color: red;
 }
 
 /* Main Section */
 .main {
-    padding-top: 69px;
-    opacity: 0.9;
-    width: 1200px;
-    margin: auto;
-    padding-bottom: 10rem;
+  padding-top: 69px;
+  opacity: 0.9;
+  width: 1200px;
+  margin: auto;
+  padding-bottom: 10rem;
 }
 
+/* About Section */
+.projectInfo {
+  margin-top: 20px;
+  padding: 0px 430px;
+  font-size:35px;
+  font-family:monospace;
+  border-radius:50px;
+}
+
+.projectInfo p {
+  white-space:nowrap;
+  overflow:hidden;
+  animation:typing 3s steps(22,end) forwards,
+            blink 7s;
+}
+
+@keyframes typing {
+  0% { width:0% }
+  100% { width: 100% }
+}
+
+@keyframes blink {
+  0%,100% {
+    border-right:2px solid transparent;
+  }
+  50% {
+    border-right:2px solid #222;
+  }
+}
+
+#typedtext {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
 
 /* Introduction Section */
 #intro {
@@ -72,7 +108,7 @@ nav a:hover {
     padding-top: 70px;
     border: 5px solid #333;
     border-radius: 25px;
-  }
+}
   
 #intro .content {
     background-color: transparent;
