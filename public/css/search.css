@@ -55,7 +55,7 @@ nav a:hover {
     color: red;
 }
 
-a:visited {
+a:active {
     color: blue;
 }
 
