@@ -55,6 +55,10 @@ nav a:hover {
     color: red;
 }
 
+a:link {
+    color: blue;
+}
+
 /* Main Section */
 
 .main {
