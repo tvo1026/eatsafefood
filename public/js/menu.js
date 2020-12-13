@@ -1,6 +1,6 @@
 // set up text to print, each item in array is new line
 var aText = new Array(
-"There are only 10 types of people in the world: Those who understand binary, and those who don't"
+"Eat Safe Foods lets you generate a report on the health inspection history of any restaurant in Prince George’s County.", "You can also use it to report any restauraunt that may have been exposed to Covid-19 if you have recently tested positive."
 );
 var iSpeed = 50; // time delay of print out
 var iIndex = 0; // start printing array at this posision
