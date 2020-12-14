@@ -1,10 +1,12 @@
 // Top
-Title of your project
-Description of your project
-Description of target browsers (iOS? Android? Which ones?)
+Eat Safe Foods
+
+This project tackles food safety, allowing users to generate a report based off information from the Prince George Health Department. It also allows users to report and view Covid-19 related information. 
+
+Currently Eat Safe Foods is fully compatible with a current Microsoft Edge browser. 
+
 Link to User Manual
 Link to Developer Manual
-
 
 //Bottom half: Developer Manual 
 The audience of this document is future developers who will take over your system.
