@@ -1,3 +1,5 @@
+User Manual
+
 Eat Safe Foods is an application which empowers users to quickly generate a report on the health related history of any food serving establishment in Prince George’s County. Using a simple search and click interface will cause a report to be generated on any selected establishment. This report provides users with an overview of previous inspections and notifies the user of the results of the most recent inspection. 
 
 Eat Safe Food also allows users to report any establishments they may have visited prior to contracting Covid-19. This information can be used to determine which restaurants may have been exposed to Covid-19, and that information is then added to Eat Safe Food’s report page.
