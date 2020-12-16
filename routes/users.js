@@ -23,7 +23,7 @@ router.get('/:zipcode', async (req, res) => {
     }
 })
 
-// Submit a user
+// Create a user
 router.post('/', async (req, res) => {
     const user = new User({
         userName: req.body.userName,
