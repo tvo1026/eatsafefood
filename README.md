@@ -97,7 +97,7 @@ npm test
 
 ## Known Bugs
 
-Application is currently only compatible with Microsoft Edge, there will be issues with generating reports in other browsers. Outside of this there are no known errors or bugs.
+Application is currently only compatible with Microsoft Edge and Google Chrome, there will be issues with generating reports in other browsers. For Chrome users, the reports will not be generated with "Open link in new tab" or "Open link in new window". Outside of this there are no known errors or bugs.
 
 ## Road-map for Future Developments:
 

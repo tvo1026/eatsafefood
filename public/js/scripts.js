@@ -80,7 +80,7 @@ function submitUser() {
     })
     .catch((err) => {
         console.log(err);
-        document.getElementById("postUserContent").innerHTML = "Invalid user id: " + userIdParam;
+        document.getElementById("postUserContent").innerHTML = "Invalid username: " + userNameParam;
     }); 
   }
   
