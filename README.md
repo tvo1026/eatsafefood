@@ -1,6 +1,6 @@
 # README - Eat Safe Foods
 
-Developed by GGTea Members: 
+**Developed by GGTea Members:** 
 - Gaurav Dali
 - Gabriel Estrella
 - Akpokli Foli Sosro
@@ -22,13 +22,14 @@ https://eatsafefoods.herokuapp.com/
 Eat Safe Foods has been tested on the following desktop browser:
 - Microsoft Edge Version 87.0.664.60.
 - Google Chrome Version 87.0.4280.88.
+
 Unfortunately, Eat Safe Foods currently does not support mobile browser.
 
 ## Manual Link
 
 [User Manual](https://github.com/tvo1026/eatsafefoods/blob/master/docs/user.md)
 
-[Developer Manual](https://github.com/tvo1026/eatsafefoods/tree/master##developer-manual)
+[Developer Manual](https://github.com/tvo1026/eatsafefoods/tree/master#developer-manual)
 
 ## Developer Manual
 

@@ -77,7 +77,7 @@ nav a:hover {
   white-space:nowrap;
   overflow:hidden;
   animation:typing 3s steps(22,end) forwards,
-            blink 7s;
+            blink 17s;
 }
 
 @keyframes typing {

@@ -1,6 +1,6 @@
 # Final Report - Eat Safe Foods
 
-GGTea Members:
+**GGTea Members:**
 - Gaurav Dali
 - Gabriel Estrella
 - Akpokli Foli Sosro
@@ -34,7 +34,7 @@ We chose to work with data from an API created under PG’s Food Protection/Poli
 ## Strategies and Solutions
 Our solution was to create a clean, simple, straightforward searching system along with a brief and clear overview of a given restaurant. Selecting a restaurant pulls that restaurant’s data directly from the PG API, so data will always be up to date. Even the search function when looking for a restaurant utilizes the API, so as new restaurants open they will appear in a search. We were able to link user reported Covid-19 exposures by address, ensuring that the proper restaurant will be reported.
 
-## Technical system decision rationale
+## Technical System Decision Rationale
 We decided to use the PG County health inspector API for both searching and reporting. We had considered using a secondary database to link restaurants to their respective data points to overcome issues with reporting Covid-19 cases because there is no data related to Covid-19 in the PG County health inspector API. We use Mongoose Database to save all the data that the users report in the form page. We were able to host this application on Heroku.
 
 ## Challenges
