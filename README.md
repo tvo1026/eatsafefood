@@ -5,6 +5,9 @@ Developed by GGTea: Gaurav Dali, Gabriel Estrella, Akpokli Foli Sosro, Edward Tr
 ## About Our Project
 
 This project tackles food safety, allowing users to generate a report based off information from the Prince George Health Department. It also allows users to report and view Covid-19 related information.
+<p align="center">
+  <img width="1000" height="500" src="docs/overview.gif">
+</p>
 
 ## EatSafeFoods Heroku Site
 
@@ -26,7 +29,7 @@ Unfortunately, Eat Safe Foods currently does not support mobile browser.
 ### Installation
 Either GitHub Desktop or Git Bash:
 ```
-git clone https://github.com/tvo1026/eatsafefoods.git.
+git clone https://github.com/tvo1026/eatsafefoods.git
 ```
 ### Dependencies
 
@@ -66,24 +69,24 @@ npm test
 
 **GET**
 - GET requests are used to get either all users or specific users based on zip code.
-- GET requests can be submitted to /users or /users/<zipcode>.
+- GET requests can be submitted to /users or /users/`zipcode`.
 - GET requests return an array of all users, JSON objects when getting specific users by zip code, or an error message when completed.
 
 **PUT**
 - PUT requests Are used to update users.
-- PUT requests can be submitted to /users/<userName>.
+- PUT requests can be submitted to /users/`userName`.
 - PUT requests must be in JSON form.
 - PUT requests return either a JSON object or an error message once completed.
 
 **DELETE**
  - DELETE requests are used to delete users.
- - DELETE requests can be submitted to /users/<userName>.
+ - DELETE requests can be submitted to /users/`userName`.
  - DELETE requests return either a confirmation message or an error message once completed.
 
 ## Known Bugs
 Application is currently only compatible with Microsoft Edge, there will be issues with generating reports in other browsers. Outside of this there are no known errors or bugs.
 
-## Road-map for future developments:
+## Road-map for Future Developments:
 - Compatibility for other major browsers and mobile devices.
 - Combine data available with another API (perhaps Google) to remove closed restaurants from search results.
 - Implement Covid-19 tracking map feature, React JS suggested.
