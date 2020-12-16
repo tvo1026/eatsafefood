@@ -1,6 +1,11 @@
-# Eat Safe Foods
+# README - Eat Safe Foods
 
-Developed by GGTea: Gaurav Dali, Gabriel Estrella, Akpokli Foli Sosro, Edward Trabucco, Thinh Vo
+Developed by GGTea Members: 
+- Gaurav Dali
+- Gabriel Estrella
+- Akpokli Foli Sosro
+- Edward Trabucco
+- Thinh Vo
 
 ## About Our Project
 
@@ -21,12 +26,14 @@ Unfortunately, Eat Safe Foods currently does not support mobile browser.
 
 ## Manual Link
 
-[User Manual](EATSAFEFOODS/docs/user.md)
-[Developer Manual](EATSAFEFOODS/README.md)
+[User Manual](https://github.com/tvo1026/eatsafefoods/blob/master/docs/user.md)
+
+[Developer Manual](https://github.com/tvo1026/eatsafefoods/tree/master##developer-manual)
 
 ## Developer Manual
 
 ### Installation
+
 Either GitHub Desktop or Git Bash:
 ```
 git clone https://github.com/tvo1026/eatsafefoods.git
@@ -48,19 +55,23 @@ This will install all dependencies listed below:
 - mongoose-auto-increment@5.0.1 - Mongoose plugin that auto-increments any ID field on your schema every time a document is saved.
 
 ## Deployment
+
 In the console, start the application server using the command:
  ```
 npm start
  ```
 
 ## Testing
+
  In the console, test by entering:
  ```
 npm test
  ```
 
 ## Server API
+
 ### Endpoints
+
 **POST**
 - POST request is used to create an user.
 - POST requests can be submitted to /users.
@@ -84,9 +95,11 @@ npm test
  - DELETE requests return either a confirmation message or an error message once completed.
 
 ## Known Bugs
+
 Application is currently only compatible with Microsoft Edge, there will be issues with generating reports in other browsers. Outside of this there are no known errors or bugs.
 
 ## Road-map for Future Developments:
+
 - Compatibility for other major browsers and mobile devices.
 - Combine data available with another API (perhaps Google) to remove closed restaurants from search results.
 - Implement Covid-19 tracking map feature, React JS suggested.
