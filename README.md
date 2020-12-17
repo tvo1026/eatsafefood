@@ -81,18 +81,18 @@ npm test
 
 **GET**
 - GET requests are used to get either all users or specific users based on zip code.
-- GET requests can be submitted to /users or /users/`zipcode`.
+- GET requests can be submitted to /users or /users/`:zipcode`.
 - GET requests return an array of all users, JSON objects when getting specific users by zip code, or an error message when completed.
 
 **PUT**
 - PUT requests Are used to update users.
-- PUT requests can be submitted to /users/`userName`.
+- PUT requests can be submitted to /users/`:userName`.
 - PUT requests must be in JSON form.
 - PUT requests return either a JSON object or an error message once completed.
 
 **DELETE**
  - DELETE requests are used to delete users.
- - DELETE requests can be submitted to /users/`userName`.
+ - DELETE requests can be submitted to /users/`:userName`.
  - DELETE requests return either a confirmation message or an error message once completed.
 
 ## Known Bugs
