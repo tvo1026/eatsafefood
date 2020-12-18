@@ -76,8 +76,8 @@ nav a:hover {
 .projectInfo p {
   white-space:nowrap;
   overflow:hidden;
-  animation:typing 3s steps(22,end) forwards,
-            blink 17s;
+  animation:typing 2s steps(22,end) forwards,
+            blink 18s;
 }
 
 @keyframes typing {
